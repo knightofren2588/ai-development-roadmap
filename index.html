@@ -3,382 +3,1204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Development Roadmap - Build AI in 16 Weeks</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Fast-Track AI Development Roadmap - ADHD Friendly</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #FF6B6B, #4ECDC4);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .intro {
+            background: #f8f9fa;
+            padding: 30px;
+            border-left: 5px solid #4ECDC4;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .intro p {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .feature-card h3 {
+            color: #4ECDC4;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .timer-container {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .timer-display {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+        }
+
+        .timer-controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .timer-btn {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .timer-btn:hover {
+            background: white;
+            color: #FF6B6B;
+        }
+
+        .achievements {
+            background: #f8f9fa;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #FFD93D;
+        }
+
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .achievement {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+
+        .achievement.unlocked {
+            border-color: #FFD93D;
+            background: #FFF9E6;
+            transform: scale(1.05);
+        }
+
+        .achievement-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .resource-hub {
+            background: #e3f2fd;
+            margin: 20px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .resource-header {
+            background: #2196F3;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .resource-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .resource-category {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #2196F3;
+        }
+
+        .resource-category h4 {
+            color: #2196F3;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .resource-links {
+            list-style: none;
+        }
+
+        .resource-links li {
+            margin-bottom: 8px;
+        }
+
+        .resource-links a {
+            color: #1976D2;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+
+        .resource-links a:hover {
+            color: #FF6B6B;
+        }
+
+        .resource-links a::before {
+            content: "🔗";
+            margin-right: 8px;
+        }
+
+        .progress-section {
+            background: #f8f9fa;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .progress-bar {
+            background: #e9ecef;
+            border-radius: 25px;
+            height: 30px;
+            margin: 20px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #4ECDC4, #44A08D);
+            height: 100%;
+            border-radius: 25px;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .week-header {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            margin: 20px 20px 0 20px;
+            border-radius: 15px 15px 0 0;
+            cursor: pointer;
+            font-size: 1.3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .week-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .week-content {
+            background: white;
+            padding: 25px;
+            margin: 0 20px 20px 20px;
+            border-radius: 0 0 15px 15px;
+            border: 2px solid #e9ecef;
+            border-top: none;
+        }
+
+        .week-content.collapsed {
+            display: none;
+        }
+
+        .task {
+            background: #f8f9fa;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 10px;
+            border-left: 4px solid #4ECDC4;
+            transition: all 0.3s ease;
+        }
+
+        .task:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .task input[type="checkbox"] {
+            margin-right: 15px;
+            transform: scale(1.5);
+            cursor: pointer;
+        }
+
+        .task input[type="checkbox"]:checked + .task-content {
+            opacity: 0.7;
+            text-decoration: line-through;
+        }
+
+        .task.completed {
+            background: #d4edda;
+            border-left-color: #28a745;
+        }
+
+        .task-details {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .task-details strong {
+            color: #495057;
+        }
+
+        .task-details a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .task-details a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .budget-section {
+            background: linear-gradient(135deg, #11998e, #38ef7d);
+            color: white;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 15px;
+        }
+
+        .budget-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .budget-section ul {
+            list-style: none;
+        }
+
+        .budget-section li {
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .adhd-tips {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px;
+        }
+
+        .adhd-tips h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .timer-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .timer-display {
+                font-size: 2rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🤖 AI Development Roadmap</h1>
-            <p>Build AI Chatbots & ML Models in 16 Weeks • 100% Project-Based • ADHD-Optimized</p>
-            <div class="header-buttons">
-                <button class="download-btn" onclick="downloadProgress()">💾 Export Progress</button>
-                <input type="file" id="import-file" accept=".json" style="display: none;" onchange="importProgress(event)">
-                <button class="download-btn" onclick="document.getElementById('import-file').click()">📁 Import Progress</button>
-                <button class="download-btn" onclick="showHelp()">❓ Help</button>
+            <h1>🤖 Fast-Track AI Development Roadmap</h1>
+            <p>ADHD-Friendly | Interactive Coding | Real Projects | Industry Certification</p>
+        </div>
+
+        <div class="intro">
+            <p><strong>🎯 Mission:</strong> Learn AI from absolute scratch in 12 weeks - <strong>no prior Python knowledge required!</strong></p>
+            <p><strong>🐍 Starting Point:</strong> Codecademy basics → DataCamp data science → Machine Learning → Advanced AI</p>
+            <p><strong>🏆 Certification Goal:</strong> Google's TensorFlow Developer Certificate (industry-recognized, $100 exam)</p>
+            <p><strong>🏥 Focus:</strong> Healthcare AI applications for Equitas Health competitive advantage</p>
+            <p><strong>💰 Budget:</strong> ~$330 total (Codecademy + DataCamp + certification)</p>
+            <p><strong>🧠 ADHD-Friendly:</strong> Interactive coding, bite-sized lessons, immediate results, no heavy reading</p>
+        </div>
+
+        <!-- Pomodoro Timer -->
+        <div class="timer-container">
+            <h3>🍅 ADHD Focus Timer</h3>
+            <div class="timer-display" id="timerDisplay">25:00</div>
+            <p id="timerStatus">Ready for a work session</p>
+            <div class="timer-controls">
+                <button class="timer-btn" onclick="startTimer()">Start</button>
+                <button class="timer-btn" onclick="pauseTimer()">Pause</button>
+                <button class="timer-btn" onclick="resetTimer()">Reset</button>
             </div>
         </div>
-        
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-number" id="tasks-done">0</div>
-                <div class="stat-label">Tasks Completed</div>
+
+        <!-- Progress Section -->
+        <div class="progress-section">
+            <h3>📊 Your AI Journey Progress</h3>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill" style="width: 0%">0%</div>
             </div>
-            <div class="stat-card">
-                <div class="stat-number">16</div>
-                <div class="stat-label">Weeks Total</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">8</div>
-                <div class="stat-label">AI Projects</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number" id="completion-percentage">0%</div>
-                <div class="stat-label">Complete</div>
-            </div>
+            <p id="progressText">0 of 48 tasks completed</p>
         </div>
-        
-        <div class="focus-today">
-            <h2>🎯 Today's Focus</h2>
-            <div class="today-task">
-                <strong>Start Here:</strong> Begin Python fundamentals on freeCodeCamp. Complete first 2 lessons (1 hour). Learn by building a simple calculator immediately!
-            </div>
-            <div class="today-task">
-                <strong>Tomorrow:</strong> Continue Python basics and start your first data collection script. Always build while learning!
-            </div>
-        </div>
-        
-        <!-- Phase 1: Foundation + First AI Project -->
-        <div class="phase">
-            <div class="phase-header" onclick="togglePhase(this)">
-                <h2>Phase 1: Foundation + First AI Project (Weeks 1-4)</h2>
-                <div class="phase-summary">Learn Python basics while building your first AI chatbot</div>
-            </div>
-            <div class="phase-content">
-                
-                <!-- Week 1 -->
-                <div class="week">
-                    <div class="week-header" onclick="toggleWeek(this)">
-                        <div class="week-title">Week 1: Python Fundamentals</div>
-                        <div class="week-desc">Learn Python basics by building small programs</div>
-                        <div class="week-meta">
-                            <span class="time-estimate">10-12 hours</span>
-                            <span class="project-badge">3 Mini Projects</span>
-                            <span class="free-badge">100% FREE</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                    </div>
-                    <div class="week-content">
-                        <ul class="task-list">
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">freeCodeCamp Python Course (Lessons 1-10)</div>
-                                    <div class="task-desc">Variables, data types, input/output. BUILD: Simple calculator program that actually works.</div>
-                                    <a href="https://www.freecodecamp.org/learn/scientific-computing-with-python/" class="task-link" target="_blank">→ Start Learning</a>
-                                </div>
-                            </li>
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Conditional Logic & Loops</div>
-                                    <div class="task-desc">If statements and for loops. BUILD: Number guessing game with user feedback.</div>
-                                    <a href="https://www.freecodecamp.org/learn/scientific-computing-with-python/" class="task-link" target="_blank">→ Continue Course</a>
-                                </div>
-                            </li>
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Functions & Lists</div>
-                                    <div class="task-desc">Create reusable code. BUILD: To-do list manager with add/remove/save features.</div>
-                                    <a href="https://www.freecodecamp.org/learn/scientific-computing-with-python/" class="task-link" target="_blank">→ Continue Course</a>
-                                </div>
-                            </li>
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Project: Personal Budget Tracker</div>
-                                    <div class="task-desc">Combine everything learned. Track income/expenses with data visualization using matplotlib.</div>
-                                    <a href="https://github.com/topics/python-beginner-projects" class="task-link" target="_blank">→ Project Ideas</a>
-                                </div>
-                            </li>
-                        </ul>
-                        
-                        <div class="concepts-box">
-                            <div class="concepts-title">🧠 Key Concepts This Week</div>
-                            <div class="concepts-list">
-                                <div class="concept-item">Variables & Data Types</div>
-                                <div class="concept-item">Conditional Logic (if/else)</div>
-                                <div class="concept-item">Loops & Iteration</div>
-                                <div class="concept-item">Functions & Parameters</div>
-                                <div class="concept-item">Lists & Basic Data Structures</div>
-                                <div class="concept-item">User Input/Output</div>
-                            </div>
-                        </div>
-                    </div>
+
+        <!-- Achievements -->
+        <div class="achievements">
+            <h3>🏆 Unlock Achievements</h3>
+            <div class="achievement-grid">
+                <div class="achievement" id="achievement1">
+                    <div class="achievement-icon">🚀</div>
+                    <h4>AI Journey Begins</h4>
+                    <p>Complete first task</p>
                 </div>
-                
-                <!-- Week 2 -->
-                <div class="week">
-                    <div class="week-header" onclick="toggleWeek(this)">
-                        <div class="week-title">Week 2: Data Collection & APIs</div>
-                        <div class="week-desc">Learn to collect and work with real-world data</div>
-                        <div class="week-meta">
-                            <span class="time-estimate">12-15 hours</span>
-                            <span class="project-badge">Data Scraper</span>
-                            <span class="free-badge">100% FREE</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                    </div>
-                    <div class="week-content">
-                        <ul class="task-list">
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Install Python Libraries (requests, beautifulsoup4, pandas)</div>
-                                    <div class="task-desc">Learn pip package management. These are essential tools for AI data collection.</div>
-                                    <a href="https://pypi.org/" class="task-link" target="_blank">→ Python Package Index</a>
-                                </div>
-                            </li>
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Build Web Scraper</div>
-                                    <div class="task-desc">Collect data from websites. BUILD: News headline scraper that saves to CSV file.</div>
-                                    <a href="https://realpython.com/beautiful-soup-web-scraper-python/" class="task-link" target="_blank">→ Web Scraping Tutorial</a>
-                                </div>
-                            </li>
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Work with APIs</div>
-                                    <div class="task-desc">Get data from APIs. BUILD: Weather app using OpenWeather API with GUI interface.</div>
-                                    <a href="https://openweathermap.org/api" class="task-link" target="_blank">→ Free Weather API</a>
-                                </div>
-                            </li>
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Data Analysis with Pandas</div>
-                                    <div class="task-desc">Analyze collected data. Create charts and find patterns in your scraped news data.</div>
-                                    <a href="https://www.freecodecamp.org/learn/data-analysis-with-python/" class="task-link" target="_blank">→ Pandas Course</a>
-                                </div>
-                            </li>
-                        </ul>
-                        
-                        <div class="concepts-box">
-                            <div class="concepts-title">🧠 Key Concepts This Week</div>
-                            <div class="concepts-list">
-                                <div class="concept-item">Python Package Management</div>
-                                <div class="concept-item">HTTP Requests & APIs</div>
-                                <div class="concept-item">Web Scraping Ethics</div>
-                                <div class="concept-item">JSON Data Handling</div>
-                                <div class="concept-item">Data Cleaning & Processing</div>
-                                <div class="concept-item">Basic Data Visualization</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="achievement" id="achievement2">
+                    <div class="achievement-icon">💻</div>
+                    <h4>Code Master</h4>
+                    <p>Complete 5 coding tasks</p>
                 </div>
-                
-                <!-- Week 3 -->
-                <div class="week">
-                    <div class="week-header" onclick="toggleWeek(this)">
-                        <div class="week-title">Week 3: First AI Chatbot 🎉</div>
-                        <div class="week-desc">Build your first AI-powered application</div>
-                        <div class="week-meta">
-                            <span class="time-estimate">15-18 hours</span>
-                            <span class="project-badge">AI Chatbot</span>
-                            <span class="free-badge">$5 Free Credits</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                    </div>
-                    <div class="week-content">
-                        <ul class="task-list">
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Get OpenAI API Key</div>
-                                    <div class="task-desc">Sign up for OpenAI and get $5 free credits. Perfect for building your first AI projects.</div>
-                                    <a href="https://platform.openai.com/api-keys" class="task-link" target="_blank">→ Get API Key</a>
-                                </div>
-                            </li>
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Install OpenAI Python Library</div>
-                                    <div class="task-desc">pip install openai. Learn to make your first AI API call and understand responses.</div>
-                                    <a href="https://platform.openai.com/docs/quickstart" class="task-link" target="_blank">→ Quick Start Guide</a>
-                                </div>
-                            </li>
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Build Command-Line Chatbot</div>
-                                    <div class="task-desc">Create a chatbot that answers questions. Your first real AI application that you can show off!</div>
-                                    <a href="https://platform.openai.com/docs/guides/text-generation" class="task-link" target="_blank">→ Text Generation Guide</a>
-                                </div>
-                            </li>
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Add Conversation Memory</div>
-                                    <div class="task-desc">Make chatbot remember conversation history. Now it feels like a real AI assistant!</div>
-                                    <a href="https://platform.openai.com/docs/guides/text-generation/chat-completions-api" class="task-link" target="_blank">→ Chat API Documentation</a>
-                                </div>
-                            </li>
-                        </ul>
-                        
-                        <div class="concepts-box">
-                            <div class="concepts-title">🧠 Key Concepts This Week</div>
-                            <div class="concepts-list">
-                                <div class="concept-item">API Authentication & Keys</div>
-                                <div class="concept-item">Large Language Models (LLMs)</div>
-                                <div class="concept-item">Prompt Engineering Basics</div>
-                                <div class="concept-item">Conversation Context Management</div>
-                                <div class="concept-item">Error Handling & Rate Limits</div>
-                                <div class="concept-item">AI Ethics & Responsible Usage</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="achievement" id="achievement3">
+                    <div class="achievement-icon">🧠</div>
+                    <h4>ML Explorer</h4>
+                    <p>Finish Week 3</p>
                 </div>
-                
-                <!-- Week 4 -->
-                <div class="week">
-                    <div class="week-header" onclick="toggleWeek(this)">
-                        <div class="week-title">Week 4: Web Interface for Your AI</div>
-                        <div class="week-desc">Turn your chatbot into a professional web application</div>
-                        <div class="week-meta">
-                            <span class="time-estimate">15-20 hours</span>
-                            <span class="project-badge">Web AI App</span>
-                            <span class="free-badge">100% FREE</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress-fill" style="width: 0%"></div>
-                        </div>
-                    </div>
-                    <div class="week-content">
-                        <ul class="task-list">
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Learn Basic HTML/CSS/JavaScript</div>
-                                    <div class="task-desc">Just enough to create web interfaces. Focus on practical skills for AI apps.</div>
-                                    <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" class="task-link" target="_blank">→ Quick Web Development</a>
-                                </div>
-                            </li>
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Install Flask (Python Web Framework)</div>
-                                    <div class="task-desc">pip install flask. Learn to create web applications with Python backend.</div>
-                                    <a href="https://flask.palletsprojects.com/en/3.0.x/quickstart/" class="task-link" target="_blank">→ Flask Tutorial</a>
-                                </div>
-                            </li>
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Create Chat Web Interface</div>
-                                    <div class="task-desc">Build a professional chat interface where users can talk to your AI. Real-time responses!</div>
-                                    <a href="https://flask.palletsprojects.com/en/3.0.x/tutorial/" class="task-link" target="_blank">→ Flask App Tutorial</a>
-                                </div>
-                            </li>
-                            <li class="task-item">
-                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
-                                <div class="task-content">
-                                    <div class="task-title">Deploy to Replit or Streamlit</div>
-                                    <div class="task-desc">Share your AI app with the world! Free hosting for Python apps.</div>
-                                    <a href="https://replit.com" class="task-link" target="_blank">→ Replit Free Hosting</a>
-                                </div>
-                            </li>
-                        </ul>
-                        
-                        <div class="concepts-box">
-                            <div class="concepts-title">🧠 Key Concepts This Week</div>
-                            <div class="concepts-list">
-                                <div class="concept-item">Web Development Fundamentals</div>
-                                <div class="concept-item">Frontend/Backend Architecture</div>
-                                <div class="concept-item">RESTful API Design</div>
-                                <div class="concept-item">User Interface Design</div>
-                                <div class="concept-item">Web Deployment & Hosting</div>
-                                <div class="concept-item">Real-time Communication</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="achievement" id="achievement4">
+                    <div class="achievement-icon">📊</div>
+                    <h4>Data Wizard</h4>
+                    <p>Complete 15 tasks</p>
+                </div>
+                <div class="achievement" id="achievement5">
+                    <div class="achievement-icon">🏥</div>
+                    <h4>Healthcare AI Pro</h4>
+                    <p>Build 3 healthcare AI projects</p>
+                </div>
+                <div class="achievement" id="achievement6">
+                    <div class="achievement-icon">⚡</div>
+                    <h4>Deep Learning Ninja</h4>
+                    <p>Complete Week 6</p>
+                </div>
+                <div class="achievement" id="achievement7">
+                    <div class="achievement-icon">🎯</div>
+                    <h4>Project Builder</h4>
+                    <p>Deploy 2 live AI apps</p>
+                </div>
+                <div class="achievement" id="achievement8">
+                    <div class="achievement-icon">🏅</div>
+                    <h4>Certification Ready</h4>
+                    <p>Complete TensorFlow projects</p>
+                </div>
+                <div class="achievement" id="achievement9">
+                    <div class="achievement-icon">🎓</div>
+                    <h4>TensorFlow Certified</h4>
+                    <p>Pass TensorFlow exam</p>
+                </div>
+                <div class="achievement" id="achievement10">
+                    <div class="achievement-icon">👑</div>
+                    <h4>AI Master</h4>
+                    <p>Complete entire roadmap</p>
                 </div>
             </div>
         </div>
-        
-        <!-- Note: Additional phases (2, 3, 4) would go here with weeks 5-16 -->
-        <!-- For brevity, showing just Phase 1. Full version would include all 16 weeks -->
-        
-        <div class="phase">
-            <div class="phase-header" onclick="togglePhase(this)">
-                <h2>Phase 2: Data Science + Machine Learning (Weeks 5-8)</h2>
-                <div class="phase-summary">Build predictive models and analyze real data</div>
+
+        <!-- Resource Hub -->
+        <div class="resource-hub">
+            <div class="resource-header">
+                <h3>🧰 AI Development Resource Hub</h3>
+                <p>One-click access to all your learning tools</p>
             </div>
-            <div class="phase-content">
-                <div class="coming-soon">
-                    <h3>🚧 Coming Soon: Advanced AI Training</h3>
-                    <p>Weeks 5-8 will cover:</p>
-                    <ul>
-                        <li>📊 Data Science Fundamentals</li>
-                        <li>🤖 Machine Learning Models</li>
-                        <li>🧠 Neural Networks & Deep Learning</li>
-                        <li>🏥 Healthcare AI Project</li>
+            <div class="resource-categories">
+                <div class="resource-category">
+                    <h4>🐍 Python Basics (Weeks 1-3)</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://www.codecademy.com/learn/learn-python-3" target="_blank">Codecademy Python Course (Start Here!)</a></li>
+                        <li><a href="https://colab.research.google.com" target="_blank">Google Colab (Free Coding Environment)</a></li>
+                        <li><a href="https://repl.it" target="_blank">Repl.it (Alternative Free Coding)</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=rfscVS0vtbw" target="_blank">Python for Everybody (Backup Video Course)</a></li>
+                    </ul>
+                </div>
+                <div class="resource-category">
+                    <h4>🎮 AI/Data Science Learning (Weeks 4+)</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://www.datacamp.com" target="_blank">DataCamp (Interactive AI/Data Science)</a></li>
+                        <li><a href="https://www.kaggle.com/learn" target="_blank">Kaggle Learn (Free AI Courses)</a></li>
+                        <li><a href="https://www.tensorflow.org/learn" target="_blank">TensorFlow Tutorials (Hands-on Deep Learning)</a></li>
+                        <li><a href="https://fast.ai" target="_blank">Fast.ai (Practical Deep Learning)</a></li>
+                    </ul>
+                </div>
+                <div class="resource-category">
+                    <h4>🛠️ AI Development Tools</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://jupyter.org" target="_blank">Jupyter Notebooks</a></li>
+                        <li><a href="https://www.anaconda.com" target="_blank">Anaconda (Python Distribution)</a></li>
+                        <li><a href="https://github.com" target="_blank">GitHub (Code Repository)</a></li>
+                        <li><a href="https://huggingface.co" target="_blank">Hugging Face (Pre-trained Models)</a></li>
+                    </ul>
+                </div>
+                <div class="resource-category">
+                    <h4>📚 No-Reading Learning Resources</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://www.youtube.com/watch?v=rfscVS0vtbw" target="_blank">Python for Data Science (Video)</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=aircAruvnKk" target="_blank">Neural Networks Explained</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=WvoLTXIjBYU" target="_blank">Machine Learning Explained</a></li>
+                        <li><a href="https://fast.ai" target="_blank">Fast.ai (Practical Deep Learning)</a></li>
+                    </ul>
+                </div>
+                <div class="resource-category">
+                    <h4>🏥 Healthcare AI Resources</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://www.kaggle.com/datasets?search=medical" target="_blank">Medical Datasets (Kaggle)</a></li>
+                        <li><a href="https://physionet.org" target="_blank">PhysioNet (Medical Data)</a></li>
+                        <li><a href="https://www.nih.gov/news-events/news-releases/nih-clinical-center-provides-one-largest-publicly-available-chest-x-ray-datasets-scientific-community" target="_blank">NIH Chest X-Ray Dataset</a></li>
+                        <li><a href="https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/de-identification/index.html" target="_blank">HIPAA De-identification Guide</a></li>
+                    </ul>
+                </div>
+                <div class="resource-category">
+                    <h4>🧠 ADHD Learning Tools</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://obsproject.com" target="_blank">OBS Studio (Screen Recording)</a></li>
+                        <li><a href="https://apps.ankiweb.net" target="_blank">Anki (Spaced Repetition)</a></li>
+                        <li><a href="https://www.forestapp.cc" target="_blank">Forest (Focus Timer)</a></li>
+                        <li><a href="https://streamlit.io" target="_blank">Streamlit (Easy App Deployment)</a></li>
+                    </ul>
+                </div>
+                <div class="resource-category">
+                    <h4>💼 Career & Certification</h4>
+                    <ul class="resource-links">
+                        <li><a href="https://www.tensorflow.org/certificate" target="_blank">TensorFlow Developer Certificate</a></li>
+                        <li><a href="https://www.linkedin.com/learning/paths/advance-your-skills-in-deep-learning-and-neural-networks" target="_blank">LinkedIn Learning AI Paths</a></li>
+                        <li><a href="https://github.com/pages" target="_blank">GitHub Pages (Free Portfolio)</a></li>
+                        <li><a href="https://www.canva.com" target="_blank">Canva (Presentation Design)</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        
-        <div class="phase">
-            <div class="phase-header" onclick="togglePhase(this)">
-                <h2>Phase 3: Advanced AI Applications (Weeks 9-12)</h2>
-                <div class="phase-summary">Build production-ready AI systems</div>
+
+        <!-- Weekly Roadmap -->
+        <div class="roadmap">
+            <h3 class="week-header" onclick="toggleWeek('week1')">Week 1: Python Absolute Basics with Codecademy 🐍</h3>
+            <div class="week-content" id="week1">
+                <div class="task">
+                    <input type="checkbox" id="task1-1"> Set up accounts and write your first code
+                    <div class="task-details">
+                        <strong>Get Started:</strong> Sign up for <a href="https://www.codecademy.com/learn/learn-python-3" target="_blank">Codecademy Python Course</a> ($40/month)
+                        <br><strong>First Victory:</strong> Type <code>print("Hello World!")</code> and see it work
+                        <br><strong>Also Create:</strong> <a href="https://colab.research.google.com" target="_blank">Google Colab</a> account (free backup)
+                        <br><strong>Time:</strong> 1 hour setup
+                        <br><strong>Goal:</strong> Get your first line of code working!
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task1-2"> Learn variables and basic math
+                    <div class="task-details">
+                        <strong>Codecademy Lesson:</strong> Variables and data types (super interactive!)
+                        <br><strong>Practice:</strong> <code>age = 25</code>, <code>name = "John"</code>, <code>height = 5.8</code>
+                        <br><strong>Math Practice:</strong> <code>total = 100 + 50</code>, <code>tip = bill * 0.15</code>
+                        <br><strong>Time:</strong> 2-3 hours (bite-sized lessons)
+                        <br><strong>ADHD Tip:</strong> Each lesson is 10-15 minutes - perfect for focus sessions!
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task1-3"> Practice with numbers and text
+                    <div class="task-details">
+                        <strong>Codecademy Exercises:</strong> String manipulation and number operations
+                        <br><strong>Fun Practice:</strong> Make Python calculate your age in days, format patient names
+                        <br><strong>Interactive:</strong> Type code → see results instantly → dopamine hit!
+                        <br><strong>Time:</strong> 2-3 hours
+                        <br><strong>Goal:</strong> Get comfortable typing code and seeing immediate results
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task1-4"> Complete Codecademy Python basics module
+                    <div class="task-details">
+                        <strong>Progress Goal:</strong> Finish first section of Codecademy Python course
+                        <br><strong>Skills Gained:</strong> Variables, basic math, text handling, input/output
+                        <br><strong>Achievement Unlock:</strong> You can now make Python do simple calculations!
+                        <br><strong>Time:</strong> 3-4 hours total
+                        <br><strong>Confidence Boost:</strong> You're officially a Python beginner (not zero anymore!)
+                    </div>
+                </div>
             </div>
-            <div class="phase-content">
-                <div class="coming-soon">
-                    <h3>🚧 Coming Soon: Production AI</h3>
-                    <p>Weeks 9-12 will cover:</p>
-                    <ul>
-                        <li>💬 Natural Language Processing</li>
-                        <li>👁️ Computer Vision & Medical Imaging</li>
-                        <li>🔗 AI Integration & Multi-Modal Systems</li>
-                        <li>🚀 Production AI Deployment</li>
-                    </ul>
+
+            <h3 class="week-header" onclick="toggleWeek('week2')">Week 2: Lists, Loops & Decisions with Codecademy 📝</h3>
+            <div class="week-content" id="week2">
+                <div class="task">
+                    <input type="checkbox" id="task2-1"> Master Python lists with Codecademy
+                    <div class="task-details">
+                        <strong>Interactive Lessons:</strong> Codecademy Lists section (super engaging!)
+                        <br><strong>Practice:</strong> <code>patients = ["John", "Mary", "David"]</code>
+                        <br><strong>Learn:</strong> Add items, remove items, find list length, access by position
+                        <br><strong>Time:</strong> 3-4 hours (multiple short lessons)
+                        <br><strong>ADHD Win:</strong> Immediate feedback on every exercise keeps you engaged
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task2-2"> Learn for loops (make Python repeat tasks)
+                    <div class="task-details">
+                        <strong>Codecademy Loops:</strong> Super interactive loop exercises
+                        <br><strong>Practice:</strong> <code>for patient in patients: print(patient)</code>
+                        <br><strong>Real Examples:</strong> Print all patient names, calculate multiple bills
+                        <br><strong>Time:</strong> 3-4 hours
+                        <br><strong>Breakthrough Moment:</strong> When you see Python doing repetitive work for you!
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task2-3"> Master if/else statements
+                    <div class="task-details">
+                        <strong>Codecademy Decision Making:</strong> Teach Python to make choices
+                        <br><strong>Practice:</strong> <code>if age > 65: print("Senior discount")</code>
+                        <br><strong>Healthcare Examples:</strong> Check fever status, determine insurance coverage
+                        <br><strong>Time:</strong> 2-3 hours
+                        <br><strong>Goal:</strong> Make your code smart enough to make decisions
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task2-4"> Build your first mini-project
+                    <div class="task-details">
+                        <strong>Apply Everything:</strong> Simple patient check-in system
+                        <br><strong>Features:</strong> Ask for name/age, check if senior, store in list, display all patients
+                        <br><strong>Uses:</strong> Variables, lists, loops, if/else - everything you learned!
+                        <br><strong>Time:</strong> 2-3 hours
+                        <br><strong>Victory:</strong> Your first working program that actually does something useful!
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="week-header" onclick="toggleWeek('week3')">Week 3: Functions + Transition to DataCamp 🧮</h3>
+            <div class="week-content" id="week3">
+                <div class="task">
+                    <input type="checkbox" id="task3-1"> Master Python functions with Codecademy
+                    <div class="task-details">
+                        <strong>Final Codecademy Section:</strong> Functions (reusable code blocks)
+                        <br><strong>Example:</strong> <code>def calculate_bmi(weight, height): return weight / (height * height)</code>
+                        <br><strong>Practice:</strong> Create functions for common healthcare calculations
+                        <br><strong>Time:</strong> 3-4 hours
+                        <br><strong>Goal:</strong> Write your own mini-programs you can reuse
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task3-2"> Learn dictionaries (final Codecademy basic)
+                    <div class="task-details">
+                        <strong>Data Organization:</strong> Store related information together
+                        <br><strong>Example:</strong> <code>patient = {"name": "John", "age": 45, "has_insurance": True}</code>
+                        <br><strong>Practice:</strong> Create patient records with multiple data points
+                        <br><strong>Time:</strong> 2-3 hours
+                        <br><strong>Achievement:</strong> Codecademy Python basics complete! 🎉
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task3-3"> Build healthcare BMI calculator
+                    <div class="task-details">
+                        <strong>Capstone Project:</strong> Put all Codecademy skills together
+                        <br><strong>Features:</strong> Calculate BMI, categorize health status, store patient data
+                        <br><strong>Uses:</strong> Functions, dictionaries, if/else, lists - everything you learned
+                        <br><strong>Time:</strong> 4-5 hours
+                        <br><strong>Victory:</strong> Your first real healthcare tool!
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task3-4"> Set up DataCamp and start data basics
+                    <div class="task-details">
+                        <strong>Platform Transition:</strong> Sign up for <a href="https://www.datacamp.com" target="_blank">DataCamp Premium</a> ($30/month)
+                        <br><strong>First DataCamp Lesson:</strong> Introduction to data manipulation
+                        <br><strong>Why Switch:</strong> Codecademy taught you Python, DataCamp teaches AI/data science
+                        <br><strong>Time:</strong> 2-3 hours (setup + first lessons)
+                        <br><strong>Note:</strong> You can cancel Codecademy now - you know the basics!
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="week-header" onclick="toggleWeek('week4')">Week 4: Working with Data + Patient Dashboard 📊</h3>
+            <div class="week-content" id="week4">
+                <div class="task">
+                    <input type="checkbox" id="task4-1"> Learn pandas basics (Excel for Python)
+                    <div class="task-details">
+                        <strong>Interactive Learning:</strong> <a href="https://www.datacamp.com/courses/pandas-foundations" target="_blank">DataCamp Pandas Foundations</a>
+                        <br><strong>What it is:</strong> Think of pandas like Excel, but controlled by code
+                        <br><strong>Practice:</strong> Open CSV files, look at data, basic filtering
+                        <br><strong>Time:</strong> 4-5 hours
+                        <br><strong>Goal:</strong> Work with spreadsheet-like data using Python
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task4-2"> Practice data cleaning and exploration
+                    <div class="task-details">
+                        <strong>Hands-on Practice:</strong> Work with messy healthcare data
+                        <br><strong>Learn:</strong> Remove empty rows, fix data types, find patterns
+                        <br><strong>Sample Data:</strong> Use fake patient data or public health datasets
+                        <br><strong>Time:</strong> 3-4 hours
+                        <br><strong>Goal:</strong> Make messy data usable for analysis
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task4-3"> Build patient demographics dashboard
+                    <div class="task-details">
+                        <strong>First Data Project:</strong> Create charts showing patient statistics
+                        <br><strong>Charts:</strong> Age distribution, gender breakdown, common conditions
+                        <br><strong>Tools:</strong> pandas for data, matplotlib for simple charts
+                        <br><strong>Time:</strong> 5-6 hours
+                        <br><strong>Goal:</strong> Turn raw data into visual insights
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task4-4"> Create simple appointment scheduler
+                    <div class="task-details">
+                        <strong>Practical Project:</strong> Basic scheduling system using your Python skills
+                        <br><strong>Features:</strong> Add appointments, check availability, view schedule
+                        <br><strong>Uses:</strong> All Python skills you've learned so far
+                        <br><strong>Time:</strong> 4-5 hours
+                        <br><strong>Goal:</strong> Build something that could actually be useful at work
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="week-header" onclick="toggleWeek('week5')">Week 5: First AI/Machine Learning Models 🤖</h3>
+            <div class="week-content" id="week5">
+                <div class="task">
+                    <input type="checkbox" id="task5-1"> Learn what machine learning actually is
+                    <div class="task-details">
+                        <strong>Interactive Learning:</strong> <a href="https://www.datacamp.com/courses/supervised-learning-with-scikit-learn" target="_blank">DataCamp Machine Learning Intro</a>
+                        <br><strong>Simple Explanation:</strong> Teaching computers to find patterns and make predictions
+                        <br><strong>First Example:</strong> Predict patient costs based on age/conditions (like a smart calculator)
+                        <br><strong>Time:</strong> 3-4 hours
+                        <br><strong>Goal:</strong> Understand ML is just finding patterns in data
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task5-2"> Build your first prediction model
+                    <div class="task-details">
+                        <strong>First ML Project:</strong> Predict healthcare costs using patient info
+                        <br><strong>Input:</strong> Age, gender, conditions → <strong>Output:</strong> Estimated cost
+                        <br><strong>Tool:</strong> scikit-learn (like pandas, but for predictions)
+                        <br><strong>Time:</strong> 4-5 hours
+                        <br><strong>Goal:</strong> See AI actually work with your own code!
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task5-3"> Create patient risk assessment tool
+                    <div class="task-details">
+                        <strong>Classification Project:</strong> Predict if patient is high/medium/low risk
+                        <br><strong>Input:</strong> Symptoms, age, medical history → <strong>Output:</strong> Risk level
+                        <br><strong>Real Application:</strong> Help doctors prioritize which patients to see first
+                        <br><strong>Time:</strong> 5-6 hours
+                        <br><strong>Goal:</strong> Build something that could help real healthcare decisions
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task5-4"> Test and improve your models
+                    <div class="task-details">
+                        <strong>Model Evaluation:</strong> Learn if your AI is actually accurate
+                        <br><strong>Skills:</strong> Check accuracy, find mistakes, make improvements
+                        <br><strong>Practice:</strong> Test your models on new data, see how well they work
+                        <br><strong>Time:</strong> 3-4 hours
+                        <br><strong>Goal:</strong> Understand when your AI is good enough to trust
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="week-header" onclick="toggleWeek('week6')">Week 6: Deep Learning + Drug Effectiveness AI 🧠</h3>
+            <div class="week-content" id="week6">
+                <div class="task">
+                    <input type="checkbox" id="task6-1"> Build Drug Effectiveness Prediction AI
+                    <div class="task-details">
+                        <strong>Interactive Project:</strong> Neural network that predicts drug effectiveness for patients
+                        <br><strong>Tools:</strong> <a href="https://www.tensorflow.org/tutorials" target="_blank">TensorFlow tutorials</a> (hands-on coding)
+                        <br><strong>Skills:</strong> Neural networks, deep learning, medical data analysis
+                        <br><strong>Output:</strong> AI system for personalized medicine recommendations
+                        <br><strong>Time:</strong> 10-12 hours (first deep learning project)
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task6-2"> Create Resource Optimization System
+                    <div class="task-details">
+                        <strong>Interactive Project:</strong> AI that optimizes hospital bed allocation and staff scheduling
+                        <br><strong>Skills:</strong> Optimization algorithms, resource planning, operational research
+                        <br><strong>Business Impact:</strong> Show potential cost savings for Equitas Health
+                        <br><strong>Output:</strong> Optimization dashboard with ROI calculations
+                        <br><strong>Time:</strong> 8-10 hours
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task6-3"> Master TensorFlow Basics through Interactive Tutorials
+                    <div class="task-details">
+                        <strong>Interactive Learning:</strong> Neural networks through Google Colab tutorials
+                        <br><strong>Focus:</strong> Build neural networks, not theory
+                        <br><strong>Apply Immediately:</strong> Test every concept on your healthcare projects
+                        <br><strong>Time:</strong> 6-8 hours (hands-on coding only)
+                        <br><strong>No Reading:</strong> Just code along and experiment!
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="week-header" onclick="toggleWeek('week7')">Week 7: Computer Vision + Medical Image Analysis 👁️</h3>
+            <div class="week-content" id="week7">
+                <div class="task">
+                    <input type="checkbox" id="task7-1"> Build Medical Image Analysis AI
+                    <div class="task-details">
+                        <strong>Interactive Project:</strong> AI that analyzes medical images (X-rays, scans)
+                        <br><strong>Dataset:</strong> <a href="https://www.nih.gov/news-events/news-releases/nih-clinical-center-provides-one-largest-publicly-available-chest-x-ray-datasets-scientific-community" target="_blank">NIH Chest X-Ray Dataset</a>
+                        <br><strong>Skills:</strong> Convolutional Neural Networks (CNNs), image preprocessing, medical imaging
+                        <br><strong>Output:</strong> Image classifier that detects abnormalities
+                        <br><strong>Time:</strong> 12-15 hours (advanced computer vision project)
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task7-2"> Create Medical Image Processing Pipeline
+                    <div class="task-details">
+                        <strong>Interactive Project:</strong> Automated system for processing and analyzing medical images
+                        <br><strong>Skills:</strong> Image preprocessing, batch processing, automated reporting
+                        <br><strong>Tools:</strong> OpenCV, TensorFlow, PIL for image manipulation
+                        <br><strong>Output:</strong> Production-ready image analysis system
+                        <br><strong>Time:</strong> 8-10 hours
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task7-3"> Complete TensorFlow Computer Vision Course
+                    <div class="task-details">
+                        <strong>Interactive Learning:</strong> CNN building through hands-on Google Colab exercises
+                        <br><strong>Focus:</strong> Image classification, object detection, transfer learning
+                        <br><strong>Apply Immediately:</strong> Improve your medical image AI
+                        <br><strong>Time:</strong> 6-8 hours (coding and experimenting)
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="week-header" onclick="toggleWeek('week8')">Week 8: Natural Language Processing + Medical Records AI 💬</h3>
+            <div class="week-content" id="week8">
+                <div class="task">
+                    <input type="checkbox" id="task8-1"> Build Medical Records Processing AI
+                    <div class="task-details">
+                        <strong>Interactive Project:</strong> AI that extracts insights from medical records and clinical notes
+                        <br><strong>Skills:</strong> Natural Language Processing, text classification, sentiment analysis
+                        <br><strong>HIPAA Focus:</strong> Learn privacy-preserving NLP techniques
+                        <br><strong>Output:</strong> Medical text analysis system with privacy protection
+                        <br><strong>Time:</strong> 10-12 hours (advanced NLP project)
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task8-2"> Create Healthcare Chatbot
+                    <div class="task-details">
+                        <strong>Interactive Project:</strong> AI chatbot that answers basic healthcare questions
+                        <br><strong>Skills:</strong> Conversational AI, intent recognition, response generation
+                        <br><strong>Tools:</strong> TensorFlow, NLTK, or Hugging Face transformers
+                        <br><strong>Output:</strong> Working chatbot for patient education
+                        <br><strong>Time:</strong> 8-10 hours
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task8-3"> Master TensorFlow NLP through Interactive Projects
+                    <div class="task-details">
+                        <strong>Interactive Learning:</strong> Text processing and analysis through hands-on coding
+                        <br><strong>Focus:</strong> Text classification, sentiment analysis, language models
+                        <br><strong>Apply Immediately:</strong> Enhance your medical records AI
+                        <br><strong>Time:</strong> 6-8 hours (coding practice)
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="week-header" onclick="toggleWeek('week9')">Week 9-10: TensorFlow Certification Projects (Industry-Recognized Cert) 🏆</h3>
+            <div class="week-content" id="week9">
+                <div class="task">
+                    <input type="checkbox" id="task9-1"> TensorFlow Project 1: Basic Neural Network
+                    <div class="task-details">
+                        <strong>Certification Requirement:</strong> Build and train a neural network using TensorFlow
+                        <br><strong>Interactive Learning:</strong> <a href="https://www.tensorflow.org/learn" target="_blank">TensorFlow Tutorials</a> (hands-on coding, no reading)
+                        <br><strong>Output:</strong> Working neural network model + documentation
+                        <br><strong>Time:</strong> 8-10 hours (spread over 3 days)
+                        <br><strong>Tip:</strong> This is one of 4 required projects for TensorFlow Developer Certificate ($100)
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task9-2"> TensorFlow Project 2: Computer Vision Model
+                    <div class="task-details">
+                        <strong>Certification Requirement:</strong> Build CNN for image classification
+                        <br><strong>Healthcare Focus:</strong> Medical image analysis (X-rays, scans)
+                        <br><strong>Tools:</strong> <a href="https://colab.research.google.com" target="_blank">Google Colab</a> | <a href="https://www.tensorflow.org/datasets" target="_blank">TensorFlow Datasets</a>
+                        <br><strong>Output:</strong> Medical image classifier for Equitas Health portfolio
+                        <br><strong>Time:</strong> 8-10 hours
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task9-3"> TensorFlow Project 3: Natural Language Processing
+                    <div class="task-details">
+                        <strong>Certification Requirement:</strong> Build NLP model for text processing
+                        <br><strong>Healthcare Focus:</strong> Medical records sentiment analysis or symptom classification
+                        <br><strong>Interactive Approach:</strong> Code along with TensorFlow NLP tutorials
+                        <br><strong>Output:</strong> Medical text processing AI + deployment
+                        <br><strong>Time:</strong> 8-10 hours
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task9-4"> TensorFlow Project 4: Time Series Prediction
+                    <div class="task-details">
+                        <strong>Certification Requirement:</strong> Build time series forecasting model
+                        <br><strong>Healthcare Focus:</strong> Patient volume prediction or resource planning
+                        <br><strong>Business Value:</strong> Show cost savings potential to Equitas Health management
+                        <br><strong>Output:</strong> Forecasting dashboard + ROI analysis
+                        <br><strong>Time:</strong> 8-10 hours
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="week-header" onclick="toggleWeek('week11')">Week 11-12: TensorFlow Certification + Portfolio Finalization 🎓</h3>
+            <div class="week-content" id="week11">
+                <div class="task">
+                    <input type="checkbox" id="task11-1"> Take TensorFlow Developer Certificate Exam
+                    <div class="task-details">
+                        <strong>Industry Certification:</strong> Google's official TensorFlow Developer Certificate ($100)
+                        <br><strong>Format:</strong> 5-hour hands-on coding exam (no reading, just building models)
+                        <br><strong>Preparation:</strong> Practice with your 4 completed projects
+                        <br><strong>Tools:</strong> <a href="https://www.tensorflow.org/certificate" target="_blank">TensorFlow Certificate</a>
+                        <br><strong>Competitive Advantage:</strong> Industry-recognized credential for your portfolio
+                        <br><strong>Time:</strong> 5 hours exam + 2-3 hours practice
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task11-2"> Deploy Equitas Health AI Suite
+                    <div class="task-details">
+                        <strong>Final Project:</strong> Combine your best 3-4 AI models into one healthcare platform
+                        <br><strong>Components:</strong> Patient risk, cost analysis, resource optimization, medical imaging
+                        <br><strong>Platform:</strong> <a href="https://streamlit.io" target="_blank">Streamlit Cloud</a> (free deployment)
+                        <br><strong>Output:</strong> Professional healthcare AI platform
+                        <br><strong>Business Pitch:</strong> Present to management as potential Equitas Health tool
+                        <br><strong>Time:</strong> 12-15 hours
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task11-3"> Create Professional AI Portfolio Website
+                    <div class="task-details">
+                        <strong>Career Tool:</strong> Professional portfolio showcasing all your AI projects
+                        <br><strong>Include:</strong> TensorFlow certificate, deployed apps, GitHub repos, ROI analyses
+                        <br><strong>Tools:</strong> <a href="https://github.com/pages" target="_blank">GitHub Pages</a> (free hosting)
+                        <br><strong>Template:</strong> <a href="https://portfolio-template-ai.netlify.app" target="_blank">AI Portfolio Template</a>
+                        <br><strong>Management Focus:</strong> Highlight business value and cost savings for Equitas Health
+                        <br><strong>Time:</strong> 6-8 hours
+                    </div>
+                </div>
+                <div class="task">
+                    <input type="checkbox" id="task11-4"> Prepare AI Skills Presentation for Management
+                    <div class="task-details">
+                        <strong>Career Strategy:</strong> Professional presentation of your new AI capabilities
+                        <br><strong>Include:</strong> Live demos, cost-benefit analysis, implementation roadmap
+                        <br><strong>Focus:</strong> How AI can improve Equitas Health operations and patient care
+                        <br><strong>Tools:</strong> <a href="https://www.canva.com" target="_blank">Canva</a> | <a href="https://docs.google.com/presentation" target="_blank">Google Slides</a>
+                        <br><strong>Goal:</strong> Position yourself as Equitas Health's AI expert
+                        <br><strong>Time:</strong> 4-6 hours
+                    </div>
                 </div>
             </div>
         </div>
-        
-        <div class="phase">
-            <div class="phase-header" onclick="togglePhase(this)">
-                <h2>Phase 4: AI Business & Career (Weeks 13-16)</h2>
-                <div class="phase-summary">Launch your AI career and build your business</div>
-            </div>
-            <div class="phase-content">
-                <div class="coming-soon">
-                    <h3>🚧 Coming Soon: AI Career Launch</h3>
-                    <p>Weeks 13-16 will cover:</p>
-                    <ul>
-                        <li>🎯 AI Specialization & Advanced Projects</li>
-                        <li>💼 AI Business & Monetization</li>
-                        <li>📄 Professional AI Portfolio</li>
-                        <li>🚀 Launch Your AI Career</li>
-                    </ul>
+
+        <!-- Budget Section -->
+        <div class="budget-section">
+            <h3>💰 Total Investment Breakdown (Hybrid Approach)</h3>
+            <ul>
+                <li><strong>Codecademy Pro:</strong> $40/month × 2 months = $80 (perfect for Python basics)</li>
+                <li><strong>DataCamp Premium:</strong> $30/month × 3 months = $90 (data science + AI focus)</li>
+                <li><strong>TensorFlow Developer Certificate:</strong> $100 (Google's official AI certification)</li>
+                <li><strong>Cloud hosting (Streamlit, GitHub Pages):</strong> FREE</li>
+                <li><strong>Google Colab Pro (optional):</strong> $10/month × 3 = $30</li>
+                <li><strong>Domain name (optional):</strong> $15/year</li>
+                <li><strong>Total Core Budget:</strong> $270 (Codecademy + DataCamp + Cert)</li>
+                <li><strong>Total with Extras:</strong> ~$330</li>
+            </ul>
+            <p><strong>💡 Money-Saving Tip:</strong> Cancel Codecademy after Week 3 when you start DataCamp. You only need it for the first 2-3 weeks to learn Python basics!</p>
+        </div>
+
+        <!-- ADHD Learning Tips -->
+        <div class="adhd-tips">
+            <h3>🧠 ADHD-Friendly Learning Toolkit</h3>
+            <p><strong>Instead of note-taking (which doesn't work for many of us), try these alternatives:</strong></p>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h4>📸 Screenshot Collections</h4>
+                    <p>Save successful code outputs, error solutions, and key insights. Name files like <code>ml_model_results_week3.png</code></p>
+                </div>
+                <div class="tip-card">
+                    <h4>🎥 Screen Recordings</h4>
+                    <p>Record yourself coding through problems. Great for portfolio + helps you remember your process.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>📂 Command Cheat Sheets</h4>
+                    <p>Save useful code snippets in text files: <code>tensorflow_commands.txt</code>, <code>pandas_tricks.txt</code></p>
+                </div>
+                <div class="tip-card">
+                    <h4>🍅 Pomodoro Focus</h4>
+                    <p>Use the timer above! 25 minutes coding + 5 minute break. Perfect for ADHD brains.</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🎯 Daily Micro-Goals</h4>
+                    <p>Complete 1-2 checkboxes per day. Small wins = dopamine hits = continued motivation!</p>
+                </div>
+                <div class="tip-card">
+                    <h4>🔗 Resource Bookmarks</h4>
+                    <p>Organize browser bookmarks by week/topic. Quick access = less friction = more learning.</p>
                 </div>
             </div>
         </div>
     </div>
-    
-    <div class="save-notice" id="saveNotice">
-        ✅ Progress saved!
-    </div>
-    
-    <script src="script.js"></script>
+
+    <script>
+        // Timer functionality
+        let timerInterval;
+        let timeLeft = 25 * 60; // 25 minutes in seconds
+        let isRunning = false;
+        let isWorkSession = true;
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            document.getElementById('timerDisplay').textContent = 
+                `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        function startTimer() {
+            if (!isRunning) {
+                isRunning = true;
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    updateTimerDisplay();
+                    
+                    if (timeLeft <= 0) {
+                        // Timer finished
+                        clearInterval(timerInterval);
+                        isRunning = false;
+                        
+                        if (isWorkSession) {
+                            // Work session ended, start break
+                            timeLeft = 5 * 60; // 5 minute break
+                            document.getElementById('timerStatus').textContent = 'Break time! 🎉';
+                            document.querySelector('.timer-container').style.background = 'linear-gradient(135deg, #4ECDC4, #44A08D)';
+                        } else {
+                            // Break ended, start work
+                            timeLeft = 25 * 60; // 25 minute work session
+                            document.getElementById('timerStatus').textContent = 'Ready for work session';
+                            document.querySelector('.timer-container').style.background = 'linear-gradient(135deg, #FF6B6B, #FF8E8E)';
+                        }
+                        isWorkSession = !isWorkSession;
+                        updateTimerDisplay();
+                        
+                        // Optional: Auto-start next session
+                        // startTimer();
+                    }
+                }, 1000);
+            }
+        }
+
+        function pauseTimer() {
+            if (isRunning) {
+                clearInterval(timerInterval);
+                isRunning = false;
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            isRunning = false;
+            timeLeft = 25 * 60;
+            isWorkSession = true;
+            document.getElementById('timerStatus').textContent = 'Ready for a work session';
+            document.querySelector('.timer-container').style.background = 'linear-gradient(135deg, #FF6B6B, #FF8E8E)';
+            updateTimerDisplay();
+        }
+
+        // Progress tracking
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const checkedBoxes = document.querySelectorAll('input[type="checkbox"]:checked');
+            const progress = (checkedBoxes.length / checkboxes.length) * 100;
+            
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressFill').textContent = Math.round(progress) + '%';
+            document.getElementById('progressText').textContent = 
+                `${checkedBoxes.length} of ${checkboxes.length} tasks completed`;
+            
+            // Update completed tasks styling
+            checkboxes.forEach(checkbox => {
+                const task = checkbox.closest('.task');
+                if (checkbox.checked) {
+                    task.classList.add('completed');
+                } else {
+                    task.classList.remove('completed');
+                }
+            });
+            
+            // Check achievements
+            checkAchievements(checkedBoxes.length);
+            
+            // Save progress
+            saveProgress();
+        }
+
+        function checkAchievements(completedTasks) {
+            const achievements = [
+                { id: 1, threshold: 1, name: "AI Journey Begins" },
+                { id: 2, threshold: 5, name: "Code Master" },
+                { id: 3, threshold: 12, name: "ML Explorer" },
+                { id: 4, threshold: 15, name: "Data Wizard" },
+                { id: 5, threshold: 20, name: "Healthcare AI Pro" },
+                { id: 6, threshold: 25, name: "Deep Learning Ninja" },
+                { id: 7, threshold: 30, name: "Project Builder" },
+                { id: 8, threshold: 40, name: "Certification Ready" },
+                { id: 9, threshold: 44, name: "TensorFlow Certified" },
+                { id: 10, threshold: 48, name: "AI Master" }
+            ];
+            
+            achievements.forEach(achievement => {
+                if (completedTasks >= achievement.threshold) {
+                    const achievementElement = document.getElementById(`achievement${achievement.id}`);
+                    if (!achievementElement.classList.contains('unlocked')) {
+                        achievementElement.classList.add('unlocked');
+                        // Optional: Show notification
+                        console.log(`🏆 Achievement Unlocked: ${achievement.name}!`);
+                    }
+                }
+            });
+        }
+
+        function toggleWeek(weekId) {
+            const weekContent = document.getElementById(weekId);
+            weekContent.classList.toggle('collapsed');
+        }
+
+        function saveProgress() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const progress = {};
+            checkboxes.forEach(checkbox => {
+                progress[checkbox.id] = checkbox.checked;
+            });
+            localStorage.setItem('aiRoadmapProgress', JSON.stringify(progress));
+        }
+
+        function loadProgress() {
+            const savedProgress = localStorage.getItem('aiRoadmapProgress');
+            if (savedProgress) {
+                const progress = JSON.parse(savedProgress);
+                Object.keys(progress).forEach(checkboxId => {
+                    const checkbox = document.getElementById(checkboxId);
+                    if (checkbox) {
+                        checkbox.checked = progress[checkboxId];
+                    }
+                });
+                updateProgress();
+            }
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            updateTimerDisplay();
+            loadProgress();
+            
+            // Add event listeners to checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', updateProgress);
+            });
+            
+            // Initially collapse all weeks except the first
+            document.querySelectorAll('.week-content').forEach((content, index) => {
+                if (index > 0) {
+                    content.classList.add('collapsed');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
