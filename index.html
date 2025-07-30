@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Development Roadmap - Build AI in 16 Weeks</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI Development Roadmap</h1>
+            <p>Build AI Chatbots & ML Models in 16 Weeks • 100% Project-Based • ADHD-Optimized</p>
+            <div class="header-buttons">
+                <button class="download-btn" onclick="downloadProgress()">💾 Export Progress</button>
+                <input type="file" id="import-file" accept=".json" style="display: none;" onchange="importProgress(event)">
+                <button class="download-btn" onclick="document.getElementById('import-file').click()">📁 Import Progress</button>
+                <button class="download-btn" onclick="showHelp()">❓ Help</button>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="tasks-done">0</div>
+                <div class="stat-label">Tasks Completed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">16</div>
+                <div class="stat-label">Weeks Total</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">8</div>
+                <div class="stat-label">AI Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="completion-percentage">0%</div>
+                <div class="stat-label">Complete</div>
+            </div>
+        </div>
+        
+        <div class="focus-today">
+            <h2>🎯 Today's Focus</h2>
+            <div class="today-task">
+                <strong>Start Here:</strong> Begin Python fundamentals on freeCodeCamp. Complete first 2 lessons (1 hour). Learn by building a simple calculator immediately!
+            </div>
+            <div class="today-task">
+                <strong>Tomorrow:</strong> Continue Python basics and start your first data collection script. Always build while learning!
+            </div>
+        </div>
+        
+        <!-- Phase 1: Foundation + First AI Project -->
+        <div class="phase">
+            <div class="phase-header" onclick="togglePhase(this)">
+                <h2>Phase 1: Foundation + First AI Project (Weeks 1-4)</h2>
+                <div class="phase-summary">Learn Python basics while building your first AI chatbot</div>
+            </div>
+            <div class="phase-content">
+                
+                <!-- Week 1 -->
+                <div class="week">
+                    <div class="week-header" onclick="toggleWeek(this)">
+                        <div class="week-title">Week 1: Python Fundamentals</div>
+                        <div class="week-desc">Learn Python basics by building small programs</div>
+                        <div class="week-meta">
+                            <span class="time-estimate">10-12 hours</span>
+                            <span class="project-badge">3 Mini Projects</span>
+                            <span class="free-badge">100% FREE</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="week-content">
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">freeCodeCamp Python Course (Lessons 1-10)</div>
+                                    <div class="task-desc">Variables, data types, input/output. BUILD: Simple calculator program that actually works.</div>
+                                    <a href="https://www.freecodecamp.org/learn/scientific-computing-with-python/" class="task-link" target="_blank">→ Start Learning</a>
+                                </div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Conditional Logic & Loops</div>
+                                    <div class="task-desc">If statements and for loops. BUILD: Number guessing game with user feedback.</div>
+                                    <a href="https://www.freecodecamp.org/learn/scientific-computing-with-python/" class="task-link" target="_blank">→ Continue Course</a>
+                                </div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Functions & Lists</div>
+                                    <div class="task-desc">Create reusable code. BUILD: To-do list manager with add/remove/save features.</div>
+                                    <a href="https://www.freecodecamp.org/learn/scientific-computing-with-python/" class="task-link" target="_blank">→ Continue Course</a>
+                                </div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Project: Personal Budget Tracker</div>
+                                    <div class="task-desc">Combine everything learned. Track income/expenses with data visualization using matplotlib.</div>
+                                    <a href="https://github.com/topics/python-beginner-projects" class="task-link" target="_blank">→ Project Ideas</a>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="concepts-box">
+                            <div class="concepts-title">🧠 Key Concepts This Week</div>
+                            <div class="concepts-list">
+                                <div class="concept-item">Variables & Data Types</div>
+                                <div class="concept-item">Conditional Logic (if/else)</div>
+                                <div class="concept-item">Loops & Iteration</div>
+                                <div class="concept-item">Functions & Parameters</div>
+                                <div class="concept-item">Lists & Basic Data Structures</div>
+                                <div class="concept-item">User Input/Output</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Week 2 -->
+                <div class="week">
+                    <div class="week-header" onclick="toggleWeek(this)">
+                        <div class="week-title">Week 2: Data Collection & APIs</div>
+                        <div class="week-desc">Learn to collect and work with real-world data</div>
+                        <div class="week-meta">
+                            <span class="time-estimate">12-15 hours</span>
+                            <span class="project-badge">Data Scraper</span>
+                            <span class="free-badge">100% FREE</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="week-content">
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Install Python Libraries (requests, beautifulsoup4, pandas)</div>
+                                    <div class="task-desc">Learn pip package management. These are essential tools for AI data collection.</div>
+                                    <a href="https://pypi.org/" class="task-link" target="_blank">→ Python Package Index</a>
+                                </div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Build Web Scraper</div>
+                                    <div class="task-desc">Collect data from websites. BUILD: News headline scraper that saves to CSV file.</div>
+                                    <a href="https://realpython.com/beautiful-soup-web-scraper-python/" class="task-link" target="_blank">→ Web Scraping Tutorial</a>
+                                </div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Work with APIs</div>
+                                    <div class="task-desc">Get data from APIs. BUILD: Weather app using OpenWeather API with GUI interface.</div>
+                                    <a href="https://openweathermap.org/api" class="task-link" target="_blank">→ Free Weather API</a>
+                                </div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Data Analysis with Pandas</div>
+                                    <div class="task-desc">Analyze collected data. Create charts and find patterns in your scraped news data.</div>
+                                    <a href="https://www.freecodecamp.org/learn/data-analysis-with-python/" class="task-link" target="_blank">→ Pandas Course</a>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="concepts-box">
+                            <div class="concepts-title">🧠 Key Concepts This Week</div>
+                            <div class="concepts-list">
+                                <div class="concept-item">Python Package Management</div>
+                                <div class="concept-item">HTTP Requests & APIs</div>
+                                <div class="concept-item">Web Scraping Ethics</div>
+                                <div class="concept-item">JSON Data Handling</div>
+                                <div class="concept-item">Data Cleaning & Processing</div>
+                                <div class="concept-item">Basic Data Visualization</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Week 3 -->
+                <div class="week">
+                    <div class="week-header" onclick="toggleWeek(this)">
+                        <div class="week-title">Week 3: First AI Chatbot 🎉</div>
+                        <div class="week-desc">Build your first AI-powered application</div>
+                        <div class="week-meta">
+                            <span class="time-estimate">15-18 hours</span>
+                            <span class="project-badge">AI Chatbot</span>
+                            <span class="free-badge">$5 Free Credits</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="week-content">
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Get OpenAI API Key</div>
+                                    <div class="task-desc">Sign up for OpenAI and get $5 free credits. Perfect for building your first AI projects.</div>
+                                    <a href="https://platform.openai.com/api-keys" class="task-link" target="_blank">→ Get API Key</a>
+                                </div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Install OpenAI Python Library</div>
+                                    <div class="task-desc">pip install openai. Learn to make your first AI API call and understand responses.</div>
+                                    <a href="https://platform.openai.com/docs/quickstart" class="task-link" target="_blank">→ Quick Start Guide</a>
+                                </div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Build Command-Line Chatbot</div>
+                                    <div class="task-desc">Create a chatbot that answers questions. Your first real AI application that you can show off!</div>
+                                    <a href="https://platform.openai.com/docs/guides/text-generation" class="task-link" target="_blank">→ Text Generation Guide</a>
+                                </div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Add Conversation Memory</div>
+                                    <div class="task-desc">Make chatbot remember conversation history. Now it feels like a real AI assistant!</div>
+                                    <a href="https://platform.openai.com/docs/guides/text-generation/chat-completions-api" class="task-link" target="_blank">→ Chat API Documentation</a>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="concepts-box">
+                            <div class="concepts-title">🧠 Key Concepts This Week</div>
+                            <div class="concepts-list">
+                                <div class="concept-item">API Authentication & Keys</div>
+                                <div class="concept-item">Large Language Models (LLMs)</div>
+                                <div class="concept-item">Prompt Engineering Basics</div>
+                                <div class="concept-item">Conversation Context Management</div>
+                                <div class="concept-item">Error Handling & Rate Limits</div>
+                                <div class="concept-item">AI Ethics & Responsible Usage</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Week 4 -->
+                <div class="week">
+                    <div class="week-header" onclick="toggleWeek(this)">
+                        <div class="week-title">Week 4: Web Interface for Your AI</div>
+                        <div class="week-desc">Turn your chatbot into a professional web application</div>
+                        <div class="week-meta">
+                            <span class="time-estimate">15-20 hours</span>
+                            <span class="project-badge">Web AI App</span>
+                            <span class="free-badge">100% FREE</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="week-content">
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Learn Basic HTML/CSS/JavaScript</div>
+                                    <div class="task-desc">Just enough to create web interfaces. Focus on practical skills for AI apps.</div>
+                                    <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" class="task-link" target="_blank">→ Quick Web Development</a>
+                                </div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Install Flask (Python Web Framework)</div>
+                                    <div class="task-desc">pip install flask. Learn to create web applications with Python backend.</div>
+                                    <a href="https://flask.palletsprojects.com/en/3.0.x/quickstart/" class="task-link" target="_blank">→ Flask Tutorial</a>
+                                </div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Create Chat Web Interface</div>
+                                    <div class="task-desc">Build a professional chat interface where users can talk to your AI. Real-time responses!</div>
+                                    <a href="https://flask.palletsprojects.com/en/3.0.x/tutorial/" class="task-link" target="_blank">→ Flask App Tutorial</a>
+                                </div>
+                            </li>
+                            <li class="task-item">
+                                <div class="task-checkbox" onclick="toggleTask(this)"></div>
+                                <div class="task-content">
+                                    <div class="task-title">Deploy to Replit or Streamlit</div>
+                                    <div class="task-desc">Share your AI app with the world! Free hosting for Python apps.</div>
+                                    <a href="https://replit.com" class="task-link" target="_blank">→ Replit Free Hosting</a>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="concepts-box">
+                            <div class="concepts-title">🧠 Key Concepts This Week</div>
+                            <div class="concepts-list">
+                                <div class="concept-item">Web Development Fundamentals</div>
+                                <div class="concept-item">Frontend/Backend Architecture</div>
+                                <div class="concept-item">RESTful API Design</div>
+                                <div class="concept-item">User Interface Design</div>
+                                <div class="concept-item">Web Deployment & Hosting</div>
+                                <div class="concept-item">Real-time Communication</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Note: Additional phases (2, 3, 4) would go here with weeks 5-16 -->
+        <!-- For brevity, showing just Phase 1. Full version would include all 16 weeks -->
+        
+        <div class="phase">
+            <div class="phase-header" onclick="togglePhase(this)">
+                <h2>Phase 2: Data Science + Machine Learning (Weeks 5-8)</h2>
+                <div class="phase-summary">Build predictive models and analyze real data</div>
+            </div>
+            <div class="phase-content">
+                <div class="coming-soon">
+                    <h3>🚧 Coming Soon: Advanced AI Training</h3>
+                    <p>Weeks 5-8 will cover:</p>
+                    <ul>
+                        <li>📊 Data Science Fundamentals</li>
+                        <li>🤖 Machine Learning Models</li>
+                        <li>🧠 Neural Networks & Deep Learning</li>
+                        <li>🏥 Healthcare AI Project</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="phase">
+            <div class="phase-header" onclick="togglePhase(this)">
+                <h2>Phase 3: Advanced AI Applications (Weeks 9-12)</h2>
+                <div class="phase-summary">Build production-ready AI systems</div>
+            </div>
+            <div class="phase-content">
+                <div class="coming-soon">
+                    <h3>🚧 Coming Soon: Production AI</h3>
+                    <p>Weeks 9-12 will cover:</p>
+                    <ul>
+                        <li>💬 Natural Language Processing</li>
+                        <li>👁️ Computer Vision & Medical Imaging</li>
+                        <li>🔗 AI Integration & Multi-Modal Systems</li>
+                        <li>🚀 Production AI Deployment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="phase">
+            <div class="phase-header" onclick="togglePhase(this)">
+                <h2>Phase 4: AI Business & Career (Weeks 13-16)</h2>
+                <div class="phase-summary">Launch your AI career and build your business</div>
+            </div>
+            <div class="phase-content">
+                <div class="coming-soon">
+                    <h3>🚧 Coming Soon: AI Career Launch</h3>
+                    <p>Weeks 13-16 will cover:</p>
+                    <ul>
+                        <li>🎯 AI Specialization & Advanced Projects</li>
+                        <li>💼 AI Business & Monetization</li>
+                        <li>📄 Professional AI Portfolio</li>
+                        <li>🚀 Launch Your AI Career</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="save-notice" id="saveNotice">
+        ✅ Progress saved!
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
